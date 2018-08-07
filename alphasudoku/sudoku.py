@@ -1,0 +1,3 @@
+'''
+Sudoku game for human
+'''
