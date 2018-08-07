@@ -26,6 +26,7 @@ class NeuralNetwork:
     ):
         self.input_shape = input_shape
         #self.output_shape = output_shape   # The output is in the same shape with input
+        self.network_structure = network_structure
 
         self.learning_rate = learning_rate
         self.l2_const = l2_const
@@ -54,7 +55,7 @@ class NeuralNetwork:
         model = Model(inputs=input_tensor, outputs=output_tensor)
         model.compile(
             loss=self.__loss_function,
-            optimizers=Adam(self.learning_rate)
+            optimizer=Adam(self.learning_rate)
         )
 
         return model
