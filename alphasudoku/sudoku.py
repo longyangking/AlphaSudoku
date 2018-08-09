@@ -3,6 +3,7 @@ Sudoku game for human
 '''
 import numpy as np 
 from game import SudokuGenerator
+from ui import UI
 
 class Board:
     def __init__(self, board, verbose=False):
@@ -71,10 +72,15 @@ class Sudoku:
         print(self.board.get_board())
 
     def ai_start(self):
-
-        # TODO Evaluate AI performance
-
         if self.verbose:
             print("Start a game with AI player...")
 
-        pass
+        state = self.get_state()
+        answer = self.player.play(state)
+        answer = np.rint(answer.reshape(self.state_shape[:2])).astype(int)
+
+        ui = UI(
+            boardinfo=self.board.get_board(), 
+            board_predict=answer
+            )
+        ui.start()

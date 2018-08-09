@@ -37,7 +37,7 @@ class TrainAI:
             history = self.ai.train(dataset, epochs=train_epochs, batch_size=batch_size)
 
             if self.verbose:
-                print("Update neural networks with loss: {0:.4f}".format(history['loss'][-1]))
+                print("Update neural networks with loss: {0:.4f}".format(history.history['loss'][-1]))
 
             if self.verbose:
                 print("Saving model ...",end="")

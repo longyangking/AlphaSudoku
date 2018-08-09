@@ -139,7 +139,7 @@ class NeuralNetwork:
         )(out)
 
         out = Conv2D(
-            filters = filters,
+            filters = 1,
             kernel_size = kernel_size,
             padding = 'same',
             activation='relu',
@@ -186,7 +186,7 @@ class AI:
         self.nnet.load_model(filename)
 
     def save_nnet(self, filename):
-        self.nnet.save_nnet(filename)
+        self.nnet.save_model(filename)
 
     def plot_nnet(self, filename):
         self.nnet.plot_model(filename)
