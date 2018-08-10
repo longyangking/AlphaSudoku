@@ -19,10 +19,10 @@ class TrainAI:
             print("The AI has been initiated successfully!")
 
     def start(self, filename):
-        n_epochs = 100
-        n_data =  100
-        train_epochs = 30
-        batch_size = 32
+        n_epochs = 1000
+        n_data =  1000
+        train_epochs = 60
+        batch_size = 128
 
         for i in range(n_epochs):
             if self.verbose:
